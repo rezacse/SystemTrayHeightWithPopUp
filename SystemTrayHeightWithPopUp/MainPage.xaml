@@ -1,0 +1,56 @@
+﻿<phone:PhoneApplicationPage x:Class="SystemTrayHeightWithPopUp.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            mc:Ignorable="d"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="PortraitOrLandscape"
+                            Orientation="Portrait"
+                            shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="52" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0"
+              Height="50"
+              Margin="0 -2 0 0"
+              VerticalAlignment="Center"
+              Background="#002050">
+
+            <TextBlock FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                       TextWrapping="NoWrap"
+                       FontSize="21"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Text="TITLE" />
+        </Grid>
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <Button Content="Show PopUp"
+                        Height="80"
+                        Width="200"
+                        Click="ShowPopUp_OnClick" />
+                <Button Content="Close PopUp"
+                        Height="80"
+                        Width="200"
+                        Click="ClosePopUp_OnClick" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
